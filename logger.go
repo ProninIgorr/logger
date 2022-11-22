@@ -24,7 +24,7 @@ const (
 
 type LogExtended struct {
 	*log.Logger
-	logLevel LogLevel
+	logLevel LogLevel //LogLevel is enum
 }
 
 func (l *LogExtended) SetLogLevel(logLvl LogLevel) {
@@ -65,6 +65,6 @@ func main() {
 	logger := NewLogExtended()
 	logger.SetLogLevel(LogLevelWarning)
 	logger.Infoln("Не должно напечататься")
-	logger.Warnln("Hello")
-	logger.Errorln("World")
+	logger.Warnln("Hello")  //2022/10/10 23:04:14 WARN Hello
+	logger.Errorln("World") //2022/10/10 23:04:14 ERR World
 }
